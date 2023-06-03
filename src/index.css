@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: Serif, sans-serif;
+    color: #313131;
+}
+
+.toggler.react-toggle--focus .react-toggle-thumb {
+    box-shadow: none;
+}
+
+.toggler.react-toggle:active:not(.react-toggle--disabled) .react-toggle-thumb {
+    box-shadow: none;
+}
+
+.toggler.react-toggle .react-toggle-track {
+    background-color: #767676;
+}
+
+.toggler:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: #5d5d5d;
+}
+
+.toggler.react-toggle--checked .react-toggle-track {
+    background-color: #a745ef;
+}
+
+.toggler.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+    background-color: #9725ea;
+}
+
+.toggler.react-toggle--checked .react-toggle-thumb {
+    left: 28px;
+}
+
+.toggler .react-toggle-thumb {
+    height: 20px;
+    width: 20px;
+    left: 2px;
+    top: 2px;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: #9725ea 1px solid;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li::before {
+    content: "\2022";
+    color: #a745ef;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+    font-weight: bold;
+}
