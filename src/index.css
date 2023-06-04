@@ -63,3 +63,13 @@ ul li::before {
     margin-left: -1em;
     font-weight: bold;
 }
+
+#root {
+    min-height: 100vh;
+    height: fit-content;
+}
+
+#root.dark {
+    background-color: #050505;
+    color: #ffffff;
+}

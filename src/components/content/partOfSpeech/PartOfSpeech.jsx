@@ -1,9 +1,10 @@
 import Synonyms from './synonyms/Synonyms.jsx';
 import Definitions from './definitions/Definitions.jsx';
+import * as PropTypes from 'prop-types';
 
 const PartOfSpeech = (props) => {
     return (
-        <div className={'flex flex-col pb-8'}>
+        <div className={'flex flex-col'}>
             <div className={'flex font-bold items-center gap-6 py-4'}>
                 <span>{props.partOfSpeech}</span>
                 <div
@@ -20,6 +21,7 @@ const PartOfSpeech = (props) => {
                             <Definitions
                                 key={`def-${idx}`}
                                 definition={item.definition}
+                                example={item.example}
                             />
                         ))}
                     </ul>
@@ -40,4 +42,11 @@ const PartOfSpeech = (props) => {
         </div>
     );
 };
+
+PartOfSpeech.propTypes = {
+    synonyms: PropTypes.array,
+    definitions: PropTypes.array,
+    partOfSpeech: PropTypes.string,
+};
+
 export default PartOfSpeech;
