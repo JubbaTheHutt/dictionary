@@ -3,7 +3,7 @@ import PlayButton from './playButton/PlayButton.jsx';
 import PartOfSpeech from '../partOfSpeech/PartOfSpeech.jsx';
 import { useDispatch, useSelector } from 'react-redux';
 import { setAudio, setText } from '../../../redux/mainSlice.js';
-import { LuExternalLink } from 'react-icons/lu';
+import Source from './source/Source.jsx';
 
 const Dictionary = () => {
     const dispatch = useDispatch();
@@ -57,25 +57,7 @@ const Dictionary = () => {
                     <PartOfSpeech key={idx} {...item} />
                 ))}
             </div>
-            <div className={'pb-32'}>
-                <div
-                    className={
-                        'border-[1px] my-4 mb-8 w-full grow-1 bg-[#f4f4f4]'
-                    }
-                ></div>
-                <div className={'flex gap-8'}>
-                    <span className={'text-[#9e9e9e]'}>Source</span>
-                    <a
-                        className={
-                            'underline flex justify-center items-center gap-2'
-                        }
-                        href={response?.sourceUrls[0]}
-                    >
-                        {response?.sourceUrls[0]}
-                        <LuExternalLink />
-                    </a>
-                </div>
-            </div>
+            <Source response={response} />
         </div>
     );
 };
